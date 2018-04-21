@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "American Funds Small Cap Growth Fund (A)",
+        "assetClass": "Mutial Fund",
+        "category": "Small Cap",
+        "website": "www.americanfunds.com",
+        "benchmarkId": 100,
+        "performance": [
+            {
+                "type":"ThreeMonth",
+                "value":0.03
+            },
+            {
+                "type":"OneYear",
+                "value":0.03
+            },
+            {
+                "type":"ThreeYear",
+                "value":0.03
+            },
+            {
+                "type":"FiveYear",
+                "value":0.03
+            },
+            {
+                "type":"TenYear",
+                "value":0.03
+            },
+            {
+                "type":"SI",
+                "value":0.03
+            }
+        ],
+        "fees": [
+            {
+                "type":"Redemption",
+                "amount":0.05
+            },
+            {
+                "type":"Front-end Sales Charge",
+                "amount":0.05
+            },
+            {
+                "type":"Deferred Sales Charge",
+                "amount":0.05
+            }
+        ]
+    }
+]
