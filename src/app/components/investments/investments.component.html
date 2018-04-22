@@ -1,3 +1,51 @@
-<p>
-  investments works!
-</p>
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Fund Name </mat-header-cell>
+        <mat-cell *matCellDef="let investment"> {{(investment).name}}<br>{{investment.website}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="3month">
+        <mat-header-cell *matHeaderCellDef> 3 Month </mat-header-cell>
+        <mat-cell *matCellDef="let investment"> {{ getPerformance( investment, 1 ) | percent }} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="1year">
+        <mat-header-cell *matHeaderCellDef> 1 Year </mat-header-cell>
+        <mat-cell *matCellDef="let investment"> {{ getPerformance( investment, 2 ) | percent }} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="3year">
+        <mat-header-cell *matHeaderCellDef> 3 Year </mat-header-cell>
+        <mat-cell *matCellDef="let investment"> {{ getPerformance( investment, 3 ) | percent }} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="5year">
+        <mat-header-cell *matHeaderCellDef> 5 Year </mat-header-cell>
+        <mat-cell *matCellDef="let investment"> {{ getPerformance( investment, 4 ) | percent }} </mat-cell>
+      </ng-container>
+      
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="10year">
+        <mat-header-cell *matHeaderCellDef> 10 Year </mat-header-cell>
+        <mat-cell *matCellDef="let investment"> {{ getPerformance( investment, 5 ) | percent }} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="sinceinception">
+        <mat-header-cell *matHeaderCellDef> Since Inception </mat-header-cell>
+        <mat-cell *matCellDef="let investment"> {{ getPerformance( investment, 6 ) | percent }} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
